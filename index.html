@@ -1,0 +1,136 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>mensuration clock</title>
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="main.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm.js"=></script>
+</head>
+<body>
+	<h1>Mensuration Clock</h1>
+	<div class="container">
+	<div class="box">
+		<div class="childbox">
+			<div class="child1box">
+				<div id="min"></div>
+				<div id="hour"></div>
+				<div id="sec"></div>
+				<div id= "mid"></div>
+			</div>
+			<p id="datemonth"></p>
+			<p id="year"></p>
+		</div>
+	</div>	
+	</div>
+	<div class="inp">
+	<strong><span>Enter the date: </span><input id="inp1" type="number" placeholder ="enter your last period date">
+	<span>Period cycle: </span><input id="inp2" type="number" placeholder="enter your month cycle"></div></strong>
+	<input class="btn" onclick="user()" type="Submit" value="Submit"><input class="btn" onclick="clean()" type="Submit" value="cancel">
+	<div id="display"></div>
+
+	<script>
+
+		var dt = new Date();
+		month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		months = (dt.getMonth());
+		document.getElementById("datemonth").innerHTML = month[months] + " " + dt.getDate();
+		document.getElementById("year").innerHTML = (dt.getFullYear());
+
+
+		var hourhand = document.getElementById("hour");
+		var minutehand = document.getElementById("min");
+		var secondhand = document.getElementById("sec");
+
+
+		function change() {
+			var date = new Date();
+			var hour = date.getHours() % 12;
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+
+
+			var hourdeg = (hour * 30) + (0.5 * minute);
+			var minutedeg = (minute * 6) + (0.1 * second);
+			var seconddeg = second * 6;
+
+			hourhand.style.transform = 'rotate(' + hourdeg +'deg)';
+			minutehand.style.transform = 'rotate(' + minutedeg +'deg)';
+			secondhand.style.transform = 'rotate(' + seconddeg +'deg)';
+
+
+
+			setTimeout(change, 1000);
+		};
+
+		change();
+
+
+		// localStorage.setItem("last period date", 16);
+		// localStorage.setItem("period cycle", 30);
+
+		// var getdate = parseInt(localStorage.getItem("last period date"));
+		// var period = parseInt(localStorage.getItem("period cycle"));
+
+		// var a = new Date();
+		// var d = parseInt(a.getDate());
+		
+
+
+		// if (getdate < d) {
+		// 	var dayLeft = (period - d) + getdate;
+		// 	document.getElementById("display").innerHTML = ("Aapke periods aane mai " + dayLeft + " baki hai!!");
+		// }
+
+		// else if  (d == 30){
+		// 	document.getElementById("display").innerHTML = ("Aapke periods aane mai " + getdate + " din baki hai!");
+
+		// }
+
+		// else if (getdate > d) {
+		// 	var z = (getdate - d);
+		// 	document.getElementById("display").innerHTML = ("A=apke periods aane mai " + z + " day baki hai!");
+		// }
+
+
+		function user() {
+			var a = parseInt(document.querySelector("#inp1").value);
+			var b = parseInt(document.querySelector("#inp2").value);
+
+			var userdate = new Date();
+			var gtdt = userdate.getDate();
+			console.log(gtdt);
+
+			if (a < gtdt) {
+			var dayLeft = (b - gtdt) + a;
+			document.getElementById("display").innerHTML = ("Aapke periods aane mai " + dayLeft + " baki hai!!");
+		}
+
+		else if  (gtdt == 30){
+			document.getElementById("display").innerHTML = ("Aapke periods aane mai " + a + " din baki hai!");
+
+		}
+
+		else if (a > gtdt) {
+			var z = (a - gtdt);
+			document.getElementById("display").innerHTML = ("Aapke periods aane mai " + z + " day baki hai!");
+		}
+
+		else if (a == gtdt) {
+			document.getElementById("display").innerHTML = ("Congratultions!! Aapke periods aa chuke hai.... <br> be happy and be safe...");
+			snowStorm.snowColor ='black';
+		}
+	}
+	
+function clean() {
+document.getElementById("inp1").value=" ";
+document.getElementById("inp2").value=" ";
+document.getElementById("display").innerHTML=" ";
+
+}
+
+		
+	</script>
+
+
+</body>
+</html>

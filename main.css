@@ -1,0 +1,166 @@
+body {
+ /*background-color: #2C3E50;*/
+ background-image: url("assests/bg.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+
+h1 {
+	color: black;
+	font-family: sans-serif;
+	font-size: 50px;
+	text-align: center;
+	font-size: 60px; 
+}
+
+@media screen and (max-width: 992px) {
+	h1 {
+		text-align: center;
+	}
+}
+
+
+.container {
+	margin-top: 50px; 
+}
+
+.box {
+	height: 200px;
+	width: 200px;
+	margin-top: 130px;
+	margin-left: 550px;
+	border-radius: 5%;	
+	background-color: #ecebda;
+}
+
+@media screen and (max-width: 992px) {
+	.box {
+		margin-left: 40%;
+	}
+}
+
+.childbox {
+	background-color: #ecebda;
+	height: 150px;
+	width: 150px;
+	border-radius: 100%;
+	position: absolute;
+	top: 155px;
+	margin-left: 25px;
+}
+.child1box {
+	background-color: red;
+	height: 110px;
+	width: 110px;
+	border-radius: 100%;
+	padding: 5px;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+#min {
+	height:45%;
+	width: 3px;
+	/*transform:rotate(90deg);*/
+    background-color: white;
+	position:relative;
+	left:46%;
+	bottom:-9%;
+	transform-origin: bottom center;
+
+}
+
+#hour {
+	height:30%;
+	width: 2px;
+	/*transform:rotate(90deg);*/
+    background-color: white;
+	position:relative;
+	left:46%;
+	bottom:25%;
+	transform-origin: bottom center;
+
+}
+
+#datemonth {
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: -30px;
+}
+#year {
+	color: grey;
+	font-size: 30px;
+	text-align: center;
+	
+}
+
+
+#mid {
+	background-color: white;
+	border: 2px solid white;
+	height: 12px;
+	width: 12px;
+	margin-left: 43px;
+	position: absolute;
+	bottom: 69px;
+	border-radius: 100%;
+}
+
+#sec {
+	height:50%;
+	width: 2px;
+	/*transform:rotate(90deg);*/
+    background-color: white;
+	position:relative;
+	left:46%;
+	bottom:72%;
+	transform-origin: bottom center;
+}
+
+#display {
+	border: 5px double black;
+    width: 500px;
+    margin-left: 30%;
+    background-color: #f3ecef;
+    font-size: 30px; 
+    color: red;
+    font-family: times new roman;
+    padding: 15px;
+    text-shadow: 2px 2px black;
+    margin-top: 20px;
+
+}
+
+.inp {
+	text-align: center;
+	padding: 40px;
+	font-size: 20px;
+}
+
+#inp1 {
+	height: 30px;
+	width: 30%;
+	font-size: 20px;
+
+}
+
+#inp2 {
+	height: 30px;
+	width: 30%;
+	font-size: 20px;
+
+}
+
+.btn {
+	margin-left: 420px;
+	height: 30px;
+	width: 80px;
+	font-size: 20px;
+}
+
+@media screen and (max-width: 992px) {
+	.btn {
+		margin-left: 30%;
+	}
+}
